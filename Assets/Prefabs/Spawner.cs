@@ -1,23 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.SceneManagement;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    public GameObject prefab;
+    public GameObject[] prefabs;
+    public float timeBetweenSpawns = 1f;
 
     private void Start()
     {
-        InvokeRepeating("Spawn", 1f, 3f);
+        InvokeRepeating("Spawn", 1f, timeBetweenSpawns);
     }
     void Spawn()
     {
-        Vector3 position = new Vector3(0f, 0f, 0f);
-        position.y = Random.Range(3f, 4f);
-        position.x = Random.Range(-6f, 6f);
-        Instantiate(prefab, position, Quaternion.identity);
+        float x = Random.Range(-5f, 5f);
+        Vector3 position = new Vector3(x, transform.position.y, 0f);
+        int random = Random.Range(0, prefabs.Length);
+
+        Instantiate(prefabs[random], position, Quaternion.identity);
+
+
+      
     }
 }
 

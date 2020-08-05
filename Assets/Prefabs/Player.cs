@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public Transform bulletOrigin;
     public float timeOfLastShoot;
 
+    public AudioClip shootAudioClip;
+    public AudioClip explotionPlayerAudioClip;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -32,6 +35,8 @@ public class Player : MonoBehaviour
     {
         Instantiate(bulletPrefab, bulletOrigin.position, bulletOrigin.rotation);
         timeOfLastShoot = Time.time;
+
+        AudioSource.PlayClipAtPoint(shootAudioClip, transform.position, 0.7f);
     }
     
     public void Damage(float amount)
@@ -40,10 +45,17 @@ public class Player : MonoBehaviour
 
             if (currentHp <= 0f)
             {
-                Debug.Log("Game Over");
-                Destroy(this.gameObject);
-
+                Dead();
             }
+    }
+
+    private void Dead()
+    {
+        FindObjectOfType<GameManager>().gameOver();
+        Destroy(this.gameObject);
+        AudioSource.PlayClipAtPoint(explotionPlayerAudioClip, transform.position, 0.7f);
+        
+
     }
 
 }

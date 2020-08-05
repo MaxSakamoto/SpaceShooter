@@ -187,7 +187,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2288492929210822553, guid: e8b852d5b30ddcd4a9cc4953058280ee,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -217,7 +217,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2792549702640260748, guid: 0a94011f9a1a37a4c85d9c54d49cb1ac,
     type: 3}
   bulletOrigin: {fileID: 1923057038}
-  timeOfLastShoot: 1
+  timeOfLastShoot: 2
+  shootAudioClip: {fileID: 8300000, guid: a41606836777c8e4e871eab7a7cc2c12, type: 3}
+  explotionPlayerAudioClip: {fileID: 0}
 --- !u!50 &195687285
 Rigidbody2D:
   serializedVersion: 4
@@ -278,3 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  rightLimit: 0
+  leftLimit: 0
+  bottomLimit: 0
+  topLimit: 0

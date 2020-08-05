@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963799233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.31999993, z: -40.97998}
+  m_LocalPosition: {x: 0, y: -0.31999993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 555464900073051875}
@@ -175,9 +175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7320601145ebbdf4d80647bbbcd30c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
   bullet: {fileID: 6572586837819314420, guid: 3b47e85a94a9fdc45970bca357a5863a, type: 3}
   bulletOrigin: {fileID: 1963799234}
-  timeBetweenShoots: 5
-  maxHP: 20
+  timeBetweenShoots: 3
+  maxHP: 10
   currentHP: 0

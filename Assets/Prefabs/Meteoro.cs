@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Meteoro : MonoBehaviour
@@ -7,6 +8,8 @@ public class Meteoro : MonoBehaviour
     public float speed = 0;
     private Rigidbody2D rb;
     public float damageAmount = 10f ;
+
+    public GameObject particlePrefab;
 
     // Start is called before the first frame update
     private void Start()
@@ -22,10 +25,20 @@ public class Meteoro : MonoBehaviour
 
             if (player != null)
             {
+                Instantiate(particlePrefab, transform.position, transform.rotation);
                 Destroy(collision.gameObject);
                 Destroy(this.gameObject);
             }
         }
+    }
+    
+
+    public void destroyMeteoro()
+    {
+        Instantiate(particlePrefab, transform.position, transform.rotation);
+                        Destroy(this.gameObject);
+
+
     }
 }
 
